@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ajax</title>
+</head>
+
+<body>
+    <p>ajax</p>
+    <script>
+        function ajax1(url, successFun) {
+            const xhr = new XMLHttpRequest();
+            xhr.open('GET', url, false);
+            xhr.onreadystatechange = function () {
+                // 这里的函数异步执行
+                // readyState
+                // 0: 代理已创建但未调用 open; 
+                // 1: 已调用 open
+                // 2: send() 方法已经被调用，并且头部和状态已经可获得
+                // 3: 加载中
+                // 4: 加载完成
+                if (xhr.readyState === 4) {
+                    if (xhr.status === 200) {
+                        successFun(xhr.responseText);
+                    }
+                }
+
+            }
+            xhr.send(null);
+        }
+
+        function ajax2(url) {
+            return fetch(url).then((res) => res.json())
+        }
+    </script>
+</body>
+
+</html>
