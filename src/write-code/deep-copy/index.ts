@@ -23,7 +23,7 @@ export function cloneDeep(obj: any, map: WeakMap<any, any> = new WeakMap()): any
         obj.forEach((v, k) => {
             const k1 = cloneDeep(k, map)
             const v1 = cloneDeep(v, map)
-            target.set(k , v)
+            target.set(k1 , v1)
         })
     }
 

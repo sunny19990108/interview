@@ -21,7 +21,7 @@ SSR 历史悠久，之前的 ASP JSP PHP 就是 SSR 。
 
 服务端直出 html
 - 性能好
-- 对 SEO 优化
+- 对 SEO 友好
 
 ## SSR 的劣势
 

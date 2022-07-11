@@ -16,7 +16,7 @@ const obj1 = { 'a': 123 };
 Object.getOwnPropertyDescriptors(obj1) 得到的属性里面 enumerable 是否为 true
 
 ## 是否可迭代
-是否有 Symbol.iterable 属性，比如：控制台打印 ['aaa','bb'][Symbol.iterator]()
+是否有 Symbol.iterator 属性，比如：控制台打印 ['aaa','bb'][Symbol.iterator]()
 
 ## Generator
  function* foo() {

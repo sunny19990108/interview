@@ -13,7 +13,7 @@ export function myInstanceof(value: any, origin: any): boolean {
         if(tempConstructor === origin.prototype) {
             return true;
         }else {
-            tempConstructor = tempConstructor.__proto__; // 顺着原型链向上找
+            tempConstructor = tempConstructor.__proto__; // 顺着原型链向上找 顺着 __proto__ 向上找
         }
     }
 

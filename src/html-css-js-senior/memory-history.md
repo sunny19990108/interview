@@ -87,6 +87,7 @@ react-router 有三种模式，设计上和 vue-router 一样
 - [browser history](https://reactrouter.com/web/api/BrowserRouter)
 - [hash history](https://reactrouter.com/web/api/HashRouter)
 - [memory history](https://reactrouter.com/web/api/MemoryRouter)
+将“URL”的历史记录保存在内存中（不读取或写入地址栏）。适用于测试和非浏览器环境，如React Native。
 
 
 

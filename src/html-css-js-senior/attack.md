@@ -15,7 +15,7 @@ Cross Site Scripting 跨站脚本攻击
 </script>
 ```
 
-最简单的解决方式：替换特殊字符
+最简单的解决方式：用计算机转义字符替换特殊字符
 
 ```js
 const newStr = str.replaceAll('<', '&lt;').replaceAll('>', '&gt;')

@@ -22,7 +22,7 @@
 keep-alive 组件
 缓存组件，组件只被创建一遍，组件创建后再切换组件时，组件不销毁 不走 beforeUnmount、unmounted 生命周期，而是 走 onDeactivated
 
-- onActivated  被 `keep-alive` 缓存的组件激活时调用。
+- onActivated 被 `keep-alive` 缓存的组件激活时调用。
 
 - onDeactivated 被 `keep-alive` 缓存的组件停用时调用。
 
@@ -53,7 +53,7 @@ mounted() {
 所以，综合来看，更建议选择 `mounted` 。
 
 
-## Vue3 Composition API 生命周期有何不可
+## Vue3 Composition API 生命周期有何不同
 ```js
 setup (props) {
   // 使用 `toRefs` 创建对 `props` 中的 `user` property 的响应式引用

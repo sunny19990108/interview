@@ -40,3 +40,8 @@ http2.0
 - header 压缩，以减少体积
 - 多路复用，一个 TCP 连接中可以多个 http 并行请求。拼接资源（如雪碧图、多 js 拼接一个）将变的多余
 - 服务器端推送 （一般不用这个，都用 websocket）
+
+https://www.zhihu.com/question/34074946/answer/75364178?utm_source=wechat_session&utm_medium=social&utm_oi=607614389361315840&utm_content=group3_Answer&utm_campaign=shareopn
+
+https://mp.weixin.qq.com/s/B7K00-wTUSmy87caDHRWFA
+

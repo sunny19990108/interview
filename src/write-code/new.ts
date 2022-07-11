@@ -23,6 +23,7 @@ export function customNew<T>(constructor:Function, ...args: any[]): T {
     // 3、返回 obj
     return obj;
 }
+
 // const f = new Foo('双越', 100)
 // const f = customNew<Foo>(Foo, '双约', 100)
 // console.info(f)
