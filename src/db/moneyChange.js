@@ -14,7 +14,7 @@ function moneyChange(coins, amount) {
   db[0] = 0;
   for (let i = 1; i < db.length; i++) {
     for (let coin of coins) {
-      if (i > coin) {
+      if (i >= coin) {
         db[i] = Math.min(db[i], db[i - coin] + 1);
       }
     }

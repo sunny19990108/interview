@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+    function moneyChange(coins, mount) {
+        const dp = new Array(mount + 1).fill(false);
+
+        for(let i = 1; i < dp.length; i++) {
+            for (const coin of coins) {
+                if(i === coin) {
+                    dp[i] = true;
+                }
+                else if(i > coin) {
+                    dp[i] = dp[i] || dp[i-coin];
+                }
+            }
+        }
+        return dp[mount];
+    }
+    moneyChange([3,5,7], 15)
+
+
+
+// 3/5/7金钱兑换，给定个数能不能兑换开。
+
+    // function coin(coins){
+    //     // 当前dp[i]代表是否能够兑换成功。
+    //     let dp = [];
+
+        
+        
+    // }
+    </script>
+</body>
+</html>
