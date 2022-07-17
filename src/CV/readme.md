@@ -90,7 +90,7 @@ display: -webkit-box;
 
 js:
 拷贝文字的父容器(样式)，让文字不换行，看宽度是正常情况的多少倍就是多少行。 -->
-
+4、内嵌在app中的页面，本地调试可以，发布测试环境在app上面看接口请求有问题，因为app上将我们的请求都包装了一遍；
 
 
 1、外层元素高度是0 ，靠内层元素撑开
@@ -129,8 +129,65 @@ pc端cookie里就没有用户登录的信息了，所以基于这点这些页面
 ## 项目整体架构/数据管理
 
 ## canvas
-微信分享活动生成活动卡片
-课后题讲解画板
+- 微信分享活动生成活动卡片 
+qrcodejs2 + html2canvas 生成带二维码的活动海报
+qrcodejs2 生成二维码到对应的html结构上去，html2canvas 根据html结构生成图片data-url 插入到一个img 标签的url上
+https://juejin.cn/post/6976243185341169677
+
+可能的问题：
+https://juejin.cn/post/6844903626205298701
+
+1、生成的图片上文字部分是空白
+不支持文字移除隐藏相关的几个属性，
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    line-clamp: 2;
+会导致生成时忽略文字部分
+
+2、生成的图片里面为什么缺失微信头像或其他图片
+原因：跨域问题,即便是canvas的画布中对于图片的域也是有要求的
+解决：html2canvas 配置项中配置 useCORS: true;
+img标签增加(图片请求发起时增加) crossOrigin='anonymous'
+图片服务器配置Access-Control-Allow-Origin 或使用代理，让网站与图片同源。
+
+3、生成的图片模糊不清且有锯齿瑕疵怎么办
+html2canvas 配置项：scale： window.devicePixelRatio || 1;  // 设备像素比
+
+但是缩放之后清晰度变高，但会导致体积太大，比如生成的海报大于5M，某些浏览器保存不了。。
+https://segmentfault.com/q/1010000040727024
+解决：
+(1.减少 DOM 规模，降低html2canvas递归遍历的计算量。
+(2.压缩图片素材本身的体积，使用 tinypng 或 ImageOptim 等工具压缩素材。
+(3.传入合适的scale值以缩放 canvas 画布。通常情况下 2~3 倍就已经满足一般的场景，不必要传入过大的放大倍数。
+(4.图片资源转 blob，可将图片资源本地化，避免了生成快照时 html2canvas 的二次图片加载处理，同时所生成的资源链接具备 URL 长度较短等优势。
+
+4、html2canvas 节点多时有延时，截图比较慢
+客户端没多少能做的，只能是加loading 尽量优化体验
+服务端截图，使用无头chrome在服务器上渲染页面后截图，再传回客户端
+
+5、什么是canvas污染？
+https://juejin.cn/post/6844904084760166407
+“将一张跨域的图片绘制到 canvas 上，这个 canvas 就是被污染的，此时无法读取该 canvas 的数据。”
+原因：浏览器同源策略
+为什么浏览器会有同源策略？
+为了限制其他源文档或脚本与当前源的资源进行交互。主要有两个地方：一个是 iframe 节点访问控制，如果没有同源策略限制的话，iframe 可以随意访问其他非同源 iframe 的 dom 节点，如钓鱼网站嵌套了一个银行网站的 iframe ，从外部就可以读取到内部密码输入框的值。另一个是 http 响应控制，如果没有同源策略限制的话，在第三方网站直接对其他网站发起请求，可以读取到响应，这样就可以获取用户的个人信息，造成隐私泄露。
+
+
+- 课后题讲解画板
+classroom2.0 主要页面分三部分：课件（容器中判断使用什么（图片，视频）组件去渲染；同步切换页码动作：轮询）、画板（发布订阅模式实现多端同步）、音视频框框（web端调用js-bridge,app端调第三方sdk(音视频通话sdk 腾讯、即时、阿里)）
+
+参考：文章
+https://juejin.cn/post/6844903788998836231
+https://zhuanlan.zhihu.com/p/58860041
+
+画板： 画画，改变画笔颜色，改变画笔粗细，橡皮擦，撤销重做
+画画： 监听鼠标事件，鼠标按下把画画状态改成true,在鼠标按下的位置画点，鼠标移动，把点记录下来并画出来，并用线将点连接起来，松开鼠标把画画状态改成false
+橡皮擦：监听鼠标事件 + context.clearRect() + clip 裁剪（clearRect默认是方形的，需要裁剪为圆形）
+清屏： 清空canvas画布
+改变画笔粗细： 有一个方法实现画线功能，里面有画线的各种配置项，改变 context.lineWidth 
+改变画笔颜色： ctx.strokeStyle = 'black';
+<!-- 撤销重做： 维护 canvasHistory 数组 里面维护了每次的canvas.toDataURL() -->
 
 
 
