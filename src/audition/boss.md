@@ -126,6 +126,7 @@ vue3 也可以
 
 6、事件委托 ul 500*500  li 5个 10*10 中间有很多空白，怎么知道点了空白还是标签
 e.target 获取一些元素属性来判断，比如tag名，或者id
+空白部分也就是父元素，可以判断 e.current（触发事件的元素） 和 e.currentTarget（绑定事件的元素） 是否相等
 
 7、v-model 怎么实现的，比如要在一个tab切换的地方使用v-model 绑定怎么实现
 model 语法糖，通过 prop 绑定数据，通过 event 绑定事件，比如一个 input 输入框，prop 绑定的数据就是输入框value属性(中的值对应的state)，event 绑定的事件就是输入框的 change 事件，change 触发，拿到event.target.value 去改变 state, 触发 re-render
