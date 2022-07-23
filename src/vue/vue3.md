@@ -66,7 +66,7 @@ proxy
     const proxyConf = {
         get(target, key, receiver) {
             // 只处理本身（非原型）的属性
-            const ownKeys = Reflect.owmKeys(target);
+            const ownKeys = Reflect.ownKeys(target);
             if(ownKeys.includes(key)) {
                 // 监听
                 console.log('get', key);
@@ -82,7 +82,7 @@ proxy
                 return true;
             }
             // 判断是否新增key
-            const ownKeys = Reflect.owmKeys(target);
+            const ownKeys = Reflect.ownKeys(target);
             if(ownKeys.includes(key)) {
                 console.log('不是新增');
             }else {
@@ -98,7 +98,7 @@ proxy
         }
     }
 
-    const result = new Proxy(target, proxy);
+    const result = new Proxy(target, proxyConf);
 
     return result;
  }

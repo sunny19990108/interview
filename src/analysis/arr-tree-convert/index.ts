@@ -70,7 +70,7 @@ const arr = [
     { id: 6, name: '部门F', parentId: 3 },
 ]
 const tree = convertToTree(arr)
-console.info(tree)
+// console.info(tree)
 
 
 const obj = {
@@ -95,4 +95,4 @@ const obj = {
     ]
 }
 const arr1 = convertToArray(obj)
-console.info(arr1)
+// console.info(arr1)
