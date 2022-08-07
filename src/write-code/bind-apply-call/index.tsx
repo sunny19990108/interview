@@ -39,6 +39,12 @@ Function.prototype.myApply = function(thisOrigin: any, bindArgs: any[] = []) {
 
 }
 
+// 解析
+// const obj = {x: 1, fn(){this.a = 'a';}}
+// 执行 obj.fn() 这时候 fn内部的this 就指向 obj 了
+// 可以借此来实现 this
+
+
 // 自己实现call
 // @ts-ignore
 Function.prototype.myCall = function(thisOrigin: any, ...bindArgs: any[] = []) {

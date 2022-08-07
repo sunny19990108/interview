@@ -3,6 +3,7 @@
 ## 题目
 
 从输入 url 到显示页面的完整过程
+https://developer.mozilla.org/zh-CN/docs/Web/Performance/How_browsers_work
 
 ## 特别注意
 

@@ -45,3 +45,6 @@ https://www.zhihu.com/question/34074946/answer/75364178?utm_source=wechat_sessio
 
 https://mp.weixin.qq.com/s/B7K00-wTUSmy87caDHRWFA
 
+## https 有几次握手
+https://network.51cto.com/article/611714.html
+

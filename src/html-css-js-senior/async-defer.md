@@ -1,4 +1,7 @@
 ## `<script>` 的 defer 和 async 属性有何区别
+defer: 推迟
+async: 异步
+
 
 ## 答案
 

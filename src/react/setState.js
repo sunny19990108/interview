@@ -79,18 +79,18 @@ class ComponentFather {
 let currentStateBox = [];
 let stateIndex = 0;
 function useState(init) {
-    let state = currentStateBox[index] || init;
+    let state = currentStateBox[stateIndex] || init;
     let setState = (newState) => {
         if(typeof newState === 'function') {
-            currentStateBox[index] = newState();
+            currentStateBox[stateIndex] = newState();
         }else {
-            currentStateBox[index] = newState;
+            currentStateBox[stateIndex] = newState;
         }
         // 更新 state 或 批量更新
         // 更新视图 render()
         // 在 render 函数中 重置stateIndex  stateIndex = 0;
     }
-    index++;
+    stateIndex++;
 
     return [state, setState];
 }
