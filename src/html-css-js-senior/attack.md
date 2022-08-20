@@ -30,6 +30,7 @@ const newStr = str.replaceAll('<', '&lt;').replaceAll('>', '&gt;')
 - React `dangerouslySetInnerHTML`
 
 ### CSRF
+必看： https://tech.meituan.com/2018/10/11/fe-security-csrf.html
 
 Cross-site request forgery 跨站请求伪造
 

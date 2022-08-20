@@ -132,11 +132,15 @@ e.target 获取一些元素属性来判断，比如tag名，或者id
 model 语法糖，通过 prop 绑定数据，通过 event 绑定事件，比如一个 input 输入框，prop 绑定的数据就是输入框value属性(中的值对应的state)，event 绑定的事件就是输入框的 change 事件，change 触发，拿到event.target.value 去改变 state, 触发 re-render
 
 8、获取对象key的方式，有什么区别
-Object.getOwnPropertyNames() 获取一个对象自身所有属性，包括不可枚举的属性（比如自定义一个属性： getFoo: {
+
+for in 语句以任意顺序迭代一个对象的除Symbol以外的可枚举属性，包括继承的可枚举属性。一般会使用 hasOwnProperty() （指示对象自身属性中是否具有指定的属性）过滤掉原型链上的属性
+
+Object.keys() 方法会返回一个由一个给定对象的自身可枚举属性组成的数组，数组中属性名的排列顺序和正常循环遍历该对象时返回的顺序一致
+
+Object.getOwnPropertyNames() 方法返回一个由指定对象的所有自身属性的属性名（包括不可枚举属性但不包括 Symbol 值作为名称的属性）组成的数组。（比如自定义一个属性： getFoo: {
     value: function() { return this.foo; },
     enumerable: false
   }）
-Object.keys() 获取一个对象自身所有可枚举属性
-for in 获取一个对象所有可枚举属性，还包括原型链上的可枚举属性，一般会使用 hasOwnProperty() （指示对象自身属性中是否具有指定的属性）过滤掉原型链上的属性
+
 
 8、反问

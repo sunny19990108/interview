@@ -18,6 +18,7 @@ response.setHeader("Access-Control-Allow-Headers", "X-Requested-With")
 response.setHeader("Access-Control-Allow-Methods", "PUT,POST,GET,DELETE,OPTIONS")
 response.setHeader("Access-Control-Allow-Credentials", "true") // 允许跨域接收 cookie
 ```
+必看： https://www.ruanyifeng.com/blog/2016/04/cors.html
 
 ## options 请求
 

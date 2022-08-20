@@ -80,6 +80,9 @@ PS：加载和执行 `<script>` 的情况比较多，如有 `defer` `async` 属�
 
 ## 连环问：什么是重绘 repaint 和重排 reflow ，有何区别
 
+引起回流重绘的行为： https://www.jianshu.com/p/24279714e4db
+https://juejin.cn/post/6844903569087266823
+
 页面渲染完成之后，随着异步加载和用户的操作，会随时发生 repaint 或者 reflow 。例如
 - 各种网页动画
 - modal dialog 弹框
@@ -107,3 +110,6 @@ BFC - Block Formatting Context 块格式化上下文
 - 设置 overflow `auto` `scroll` `hidden`
 - 设置 display `inline-block` `table` `table-cell` `flex` `grid`
 - 设置 position `absolute` `fixed`
+
+BFC 的介绍，触发BFC的条件以及使用场景：
+https://developer.mozilla.org/zh-CN/docs/Web/Guide/CSS/Block_formatting_context
