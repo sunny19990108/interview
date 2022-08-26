@@ -125,3 +125,6 @@ nodejs 事件循环的过程
 **注意** 
 
 基于 nodejs 最新版。nodejs 旧版会有所不同，特别注意。
+
+## 重要！！ 认真阅读
+https://zhuanlan.zhihu.com/p/142742003

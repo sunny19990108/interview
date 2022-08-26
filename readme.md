@@ -13,6 +13,12 @@
 适合很久不接触面试的情况下，快速的过一遍理论知识，或是突击准备面试
 
 ## 一些可参考的复习攻略
+攻略
 https://juejin.cn/post/7061588533214969892
-
 https://juejin.cn/post/7087744796449570823
+https://github.com/Cosen95/fe_interview/issues
+https://jcmpd975ac.feishu.cn/base/appNuDKPaGtimrdkB0JnXmpoktZ?table=tblhwIrxYTiY1SSP&view=vew9iquA45
+
+面试方法论
+https://juejin.cn/post/6931150126069055496
+

@@ -12,3 +12,5 @@ vue 的 method、生命周期 因为 vue 组件本质上也是一个对象
 
 ## tips
 react（非hooks）生命周期中 使用箭头函数，在函数内部能正确的拿到 this，因为 react(非 hooks) 本质上是一个 ES6 class
+必读： https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Functions/Arrow_functions
+https://juejin.cn/post/6844904032956317709

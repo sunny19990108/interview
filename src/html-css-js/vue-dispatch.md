@@ -40,11 +40,23 @@ $refs 用来获取子组件的属性 或 调用子组件的方法 this.$refs.son
 provide 传递数据：
 以对象的方式传递自定义变量
 以方法的方式传递响应式数据
+```js
+// 父组件
 provide() {
     return {
+        // 为保证注入方和供给方之间的响应性链接，我们需要使用 computed() 函数提供一个计算属性
         info: computed(() => return this.data1)
     }
 }
+
+// 子孙组件
+export default {
+  inject: ['info']
+}
+```
+provide inject 本身是不支持响应式的，为了实现响应式的链接需要用  computed() 函数提供一个计算属性
+可以看下 vue 官网的例子
+https://cn.vuejs.org/guide/components/provide-inject.html#working-with-reactivity
 
 ## VueX
 专为 Vue 开发的状态管理模式+库，集中管理应用所有组件的状态，多个组件之间共享状态
