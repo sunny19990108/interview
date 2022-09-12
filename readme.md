@@ -19,6 +19,12 @@ https://juejin.cn/post/7087744796449570823
 https://github.com/Cosen95/fe_interview/issues
 https://jcmpd975ac.feishu.cn/base/appNuDKPaGtimrdkB0JnXmpoktZ?table=tblhwIrxYTiY1SSP&view=vew9iquA45
 
+https://juejin.cn/post/7013953652578582558
+https://juejin.cn/post/6844903928442667015
+
 面试方法论
 https://juejin.cn/post/6931150126069055496
+
+offer选择
+https://juejin.cn/post/6983930529368244254
 
